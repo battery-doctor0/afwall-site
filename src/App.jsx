@@ -23,12 +23,7 @@
       const { toast } = useToast();
 
       const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/ab.apk'; // Chemin relatif depuis le dossier /public
-        link.download = 'AFWall+.apk'; // Nom du fichier à télécharger
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        window.location.href = "https://github.com/afwall1/afwall-site/releases/download/v1.0/AFWall%2B.apk";
       };
       
 
