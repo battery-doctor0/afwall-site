@@ -1,100 +1,99 @@
 
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    :root {
-      --background: 0 0% 98%; /* Slightly off-white for a softer look */
-      --foreground: 222.2 84% 4.9%;
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
-      --primary: 142.1 76.2% 36.3%; /* Green */
-      --primary-foreground: 355.7 100% 97.3%;
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: 222.2 47.4% 11.2%;
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
-      --destructive: 0 72.2% 50.6%; /* More vibrant red */
-      --destructive-foreground: 0 0% 98%;
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 142.1 76.2% 36.3%; /* Green for focus ring */
-      --radius: 0.75rem; /* Slightly larger radius for modern feel */
-    }
+@layer base {
+  :root {
+    --background: 224 71.4% 4.1%; /* Darker slate for base */
+    --foreground: 210 20% 98%; /* Light gray for text */
+    --card: 224 71.4% 5.1%; /* Slightly lighter slate for cards */
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 90.2% 51.2%; /* Vibrant Purple */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%; /* Dark Gray */
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%; /* Lighter muted text */
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 72.2% 50.6%; /* Brighter red for destructive actions */
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 27.9% 20.9%; /* Slightly lighter border */
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 90.2% 51.2%; /* Ring matches primary */
+    --radius: 0.75rem;
+  }
 
-    .dark {
-      --background: 224 71.4% 4.1%; /* Darker background */
-      --foreground: 210 20% 98%;
-      --card: 224 71.4% 4.1%;
-      --card-foreground: 210 20% 98%;
-      --popover: 224 71.4% 4.1%;
-      --popover-foreground: 210 20% 98%;
-      --primary: 142.1 70.6% 45.3%; 
-      --primary-foreground: 355.7 100% 97.3%;
-      --secondary: 215 27.9% 16.9%;
-      --secondary-foreground: 210 20% 98%;
-      --muted: 215 27.9% 16.9%;
-      --muted-foreground: 217.9 10.6% 64.9%;
-      --accent: 215 27.9% 16.9%;
-      --accent-foreground: 210 20% 98%;
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 215 27.9% 16.9%;
-      --input: 215 27.9% 16.9%;
-      --ring: 142.1 70.6% 45.3%;
-    }
+  .dark { /* Keep dark consistent with base, or define alternative dark theme if needed */
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 5.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 90.2% 51.2%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 27.9% 20.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 90.2% 51.2%;
+  }
+}
 
-    @layer base {
-      * {
-        @apply border-border;
-      }
-      body {
-        @apply bg-background text-foreground;
-        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-    }
-    
-    body {
-      background-image: radial-gradient(circle at top right, hsl(var(--primary) / 0.05) 0%, transparent 30%),
-                        radial-gradient(circle at bottom left, hsl(200 80% 50% / 0.05) 0%, transparent 30%);
-      background-color: hsl(var(--background));
-    }
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    @apply bg-primary/30 text-primary-foreground;
+  }
+}
 
-    ::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: hsl(var(--background) / 0.7);
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: hsl(var(--primary) / 0.6);
-      border-radius: 10px;
-      border: 2px solid hsl(var(--background) / 0.7);
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: hsl(var(--primary));
-    }
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-red-500 to-orange-400;
+}
 
-    .animate-bounce {
-      animation: bounce 1s infinite;
-    }
+.glassmorphism-card {
+  background: rgba(30, 35, 48, 0.35); /* Darker, less transparent for depth */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 16px; /* Slightly more pronounced rounding */
+  border: 1px solid rgba(128, 90, 213, 0.2); /* Subtle purple border */
+  box-shadow: 0 12px 32px 0 rgba(16, 19, 29, 0.37); /* Softer, more diffused shadow */
+}
 
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(-15%);
-        animation-timing-function: cubic-bezier(0.8,0,1,1);
-      }
-      50% {
-        transform: translateY(0);
-        animation-timing-function: cubic-bezier(0,0,0.2,1);
-      }
-    }
+.hero-bg-gradient {
+  background:
+    radial-gradient(ellipse at 70% 30%, hsl(var(--primary) / 0.25) 0%, transparent 40%),
+    radial-gradient(ellipse at 30% 70%, hsl(280, 70%, 60% / 0.2) 0%, transparent 40%),
+    linear-gradient(160deg, hsl(240, 20%, 10%) 0%, hsl(260, 30%, 15%) 50%, hsl(280, 25%, 12%) 100%);
+}
+
+.feature-icon-bg {
+  @apply bg-primary/15 text-primary p-4 rounded-xl shadow-md; /* More pronounced background */
+}
+
+.testimonial-card {
+  @apply p-6 rounded-xl shadow-lg;
+}
+
+.cta-bg-gradient {
+  background: linear-gradient(60deg, hsl(var(--primary) / 0.9) 0%, hsl(280, 80%, 55%) 100%);
+}
   
